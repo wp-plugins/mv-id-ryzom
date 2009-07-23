@@ -3,7 +3,7 @@
 Plugin Name: MV-ID: Ryzom
 Plugin URI: http://signpostmarv.name/mv-id/
 Description: Display your identity from Ryzom!
-Version: 0.1
+Version: 0.1.1
 Author: SignpostMarv Martin
 Author URI: http://signpostmarv.name/
 For the purposes of the Ryzom Summer Coding Contest, this plugin is available under the GNU AGPLv3 http://www.fsf.org/licensing/licenses/agpl-3.0.html
@@ -100,7 +100,7 @@ class mv_id_vcard_ryzom extends mv_id_vcard
 					}
 				}
 				$data['gender'] = $gender[$data['gender']];
-				$description = sprintf(__('%5$s %1$s is a %4$s %3$s, who was last seen in the %2$s shard on %6$s.'),$data['name'],$data['shard'],$data['race'],$data['gender'],$data['title'],date('l jS, F Y',$data['logout']));
+				$description = sprintf(__('%5$s %1$s is a %4$s %3$s, who was last seen in the %2$s shard on %6$s.', 'mv-id-ryzom'),$data['name'],$data['shard'],$data['race'],$data['gender'],$data['title'],date('l jS, F Y',$data['logout']));
 				$data['guild'] = mv_id_plugin::XPath($XML,'./guild');
 				if($data['guild'] === false)
 				{
@@ -115,5 +115,7 @@ class mv_id_vcard_ryzom extends mv_id_vcard
 		}
 	}
 }
+$plugin_dir = basename(dirname(__FILE__));
+load_plugin_textdomain( 'mv-id-ryzom', '', $plugin_dir);
 add_action('mv_id_plugin__register_metaverses','mv_id_vcard_ryzom::register_metaverse');
 ?>
