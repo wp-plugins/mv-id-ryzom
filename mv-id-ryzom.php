@@ -3,7 +3,7 @@
 Plugin Name: MV-ID: Ryzom
 Plugin URI: http://signpostmarv.name/mv-id/
 Description: Display your identity from Ryzom!
-Version: 0.1.1
+Version: 1.0
 Author: SignpostMarv Martin
 Author URI: http://signpostmarv.name/
 For the purposes of the Ryzom Summer Coding Contest, this plugin is available under the GNU AGPLv3 http://www.fsf.org/licensing/licenses/agpl-3.0.html
@@ -22,6 +22,10 @@ For the purposes of the Ryzom Summer Coding Contest, this plugin is available un
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+if(class_exists('mv_id_vcard') === false)
+{
+	return;
+}
 class mv_id_vcard_ryzom extends mv_id_vcard
 {
 	const sprintf_img         = '#';

@@ -2,8 +2,8 @@
 Contributors: signpostmarv
 Tags: mv-id, MV-ID, Metaverse, ID, hCard, vCard, hResume, Ryzom
 Requires at least: 2.8
-Tested up to: 2.8.2
-Stable tag: 0.1.1
+Tested up to: 2.9.2
+Stable tag: 1.0
 
 Use Metaverse-ID to display your identity from Ryzom!
 
@@ -25,6 +25,10 @@ MV-ID: Ryzom is a plugin for the framework provided by the [Metaverse ID plugin]
 * PHP cURL extension (WordPress HTTP API seems to choke when fetching the remote data in some server configurations)
 
 == Changes ==
+
+1.0
+--------------------
+* Fixed a bug that occurs when the main MV-ID plugin is deactivated
 
 0.1.1
 --------------------
